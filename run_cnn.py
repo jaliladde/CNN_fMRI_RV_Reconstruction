@@ -47,9 +47,9 @@ num_epochs=1
 window_start_point=int((window_size/2)-1)         
 window_end_point=-window_start_point
 BatchSize=64*10
-n_samples=302                     # from all samples, randomly select a subset of them 
+n_samples=352                     # from all samples, randomly select a subset of them 
 number_folds = 10
-number_test_each_fold = 30
+number_test_each_fold = 35
 
 n_col = 1
 
