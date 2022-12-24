@@ -35,18 +35,17 @@ from FIT_MODEL import FIT_MODEL
 
 # SET THE INITIAL PARAMETERS __________________________________________________
 
-data_path='/Volumes/myData/Thesis-Jalil-UofC/D-HCP-Files/Input-Output-D/'
-main_path='/Volumes/myData/Thesis-Jalil-UofC/D-HCP-Files/CNN-Model-D-RV-k-fold/'
+data_path='/path_of_data/'
+main_path='/path_of_code_files/'
 
 
-Shapes_Data=np.zeros((10,4))
 num_ROIs=90
 Volumes=478                                    # In HCP-D project, the number of fMRI volumes are 478
 window_size=65                                 # change it according to the desired window size [9 , 17 , 33 , 65 , 129 , 257]
 num_epochs=300                     
 window_start_point=int((window_size/2)-1)         
 window_end_point=-window_start_point
-BatchSize=64*10
+BatchSize=64
 n_samples=352                     # from all samples, randomly select a subset of them 
 number_folds = 10
 number_test_each_fold = 35
@@ -55,8 +54,8 @@ n_col = 1
 
 # LOAD DATA AND NORMALIZE IT __________________________________________________
 
-inputs=np.load(data_path + 'input_hcp_d.npy')
-targets=np.load(data_path + 'RV_HCP_D.npy')
+inputs=np.load(data_path + 'Input_Data.npy')
+targets=np.load(data_path + 'RV.npy')
 
 shuffle_scans=np.random.permutation(inputs.shape[0])
 # =============================================================================
