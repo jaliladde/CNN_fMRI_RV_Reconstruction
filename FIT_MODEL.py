@@ -8,7 +8,7 @@ def FIT_MODEL(model, train_inputs, train_targets, valid_inputs, valid_targets, n
     save_path = main_path + 'saved_data/'
     optimizer = tf.keras.optimizers.Adam()
 
-    model.compile(loss='mse', optimizer=optimizer, metrics=['mae', R2])
+    model.compile(loss='mse', optimizer=optimizer, metrics=['mae', 'mse', R2])
     model.summary()
 
     earlyStopping = EarlyStopping(monitor='val_loss', patience=30, mode='min')
